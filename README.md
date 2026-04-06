@@ -1,21 +1,19 @@
-# Calculator CI/CD - Practice 1
+# Calculator CI/CD 
 
 ## Description
-Sample project to learn CI/CD with GitHub Actions. Implements a basic calculator in Java 21 with unit tests using JUnit 5 and Mockito.
+Sample project to show CI/CD with GitHub Actions. Implements a basic calculator in Java 21 with unit tests using JUnit 5 and Mockito.
 
 ## Features
 - ✅ Java 21
 - ✅ Maven as build tool
 - ✅ JUnit Jupiter 6.0.3 for unit testing
 - ✅ Mockito 5.23.0 for mocking (configured for Java 21)
-- ✅ JaCoCo for code coverage (compatible with Java 21)
 - ✅ Executable application with CLI interface
 
 ## Important Notes for Java 21
 This project targets Java 21. Java 21 is an LTS release with broad tooling support; the repository and CI are configured for Java 21.
 
 - **Mockito**: Works without special JVM flags in most cases; keep dependencies up-to-date.
-- **JaCoCo**: Compatible with Java 21 — coverage reporting can be enabled in CI.
 - **GitHub Actions**: Use `actions/setup-java@v4` with `distribution: 'temurin'` and `java-version: '21'`.
 
 For production projects, consider long-term support (LTS) versions like Java 17 or Java 21 depending on compatibility requirements.
@@ -75,12 +73,6 @@ mvn clean compile
 mvn clean test
 ```
 
-### Generate coverage report (when re-enabled)
-```bash
-# Currently disabled - will be available when JaCoCo supports Java 22
-# mvn clean test jacoco:report
-```
-
 ## Included Tests
 - ✅ **Basic unit tests**: Arithmetic operations
 - ✅ **Parameterized tests**: Multiple test cases
@@ -116,8 +108,7 @@ java -jar target/calculator-practice1-1.0.0.jar prime 17
 
 ### Common Issues with Java 22
 1. **Mockito warnings**: The warnings about dynamic agent loading are expected and don't affect functionality
-2. **JaCoCo not working**: This is a known limitation with Java 22; use Java 17 if code coverage is essential
-3. **GitHub Actions**: Ensure you use `actions/setup-java@v4` with `distribution: 'temurin'`
+2. **GitHub Actions**: Ensure you use `actions/setup-java@v4` with `distribution: 'temurin'`
 
 ### For GitHub Actions Workflow
 ```yaml

@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
+This file provides guidance to AI coding assistants (GitHub Copilot, Cursor, Warp, etc.) when working with code in this repository. It is the standard way to give an AI agent the context it needs to understand the project without having to explore every file from scratch.
 
 ## Stack and runtime constraints
 - Java 21 (project is configured with `<source>/<target>` and `maven.compiler.release` set to 21 in `pom.xml`)
@@ -23,8 +23,6 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
   - `mvn package`
 - Build JAR with clean:
   - `mvn clean package`
-- Run coverage profile (JaCoCo configured as opt-in Maven profile `coverage`):
-  - `mvn -Pcoverage test`
 - Run app from packaged JAR:
   - `java -jar target/calculator-practice1-1.0.0.jar`
 - Run app in command mode:
